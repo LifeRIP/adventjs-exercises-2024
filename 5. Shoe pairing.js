@@ -24,11 +24,11 @@ function organizeShoes(shoes) {
   let tempShoes = [...shoes];
   let out = [];
   for (let i in shoes) {
+    // If find a left shoe splice it of the array copy
     if (shoes[i].type == 'I') {
-      //console.log(i, shoes[i].type);
       tempShoes.splice(i, 1);
-      //console.log(tempShoes);
       for (let j in tempShoes) {
+        // If find a right shoe with the same size splice it of the array copy and add it to the output
         if (tempShoes[j].type == 'R' && tempShoes[j].size == shoes[i].size) {
           out.push(tempShoes.splice(j, 1)[0].size);
         }
